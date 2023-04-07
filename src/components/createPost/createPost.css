@@ -1,0 +1,81 @@
+.createPost{
+    width: 100%;
+    height: 170px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.37);
+}
+
+.createPostWrapper{
+    padding: 10px;
+}
+
+.createTop{
+    display: flex;
+    align-items: center;
+}
+
+.createInput{
+    border: none;
+    width: 80%;
+}
+
+.createInput:focus{
+    outline: none;
+}
+
+.createHr{
+    margin: 20px;
+}
+
+.createProfileImg{
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.createBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.createOptions{
+    display: flex;
+    margin-left: 20px;
+}
+
+.createOption{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 15px;
+    cursor: pointer
+}
+
+.createIcon{
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.createOptionText{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.createButton{
+    /* width: 150px; */
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    padding: 7px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+

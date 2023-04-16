@@ -8,6 +8,9 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import WorkIcon from '@mui/icons-material/Work';
 import EventIcon from '@mui/icons-material/Event';
 import SchoolIcon from '@mui/icons-material/School';
+
+import { Users } from '../../dummyData';
+import CloseFriend from '../closeFriend/CloseFriend';
 const Leftbar = () => {
   return (
     <div className='leftbar'>
@@ -57,18 +60,11 @@ const Leftbar = () => {
         <hr className="leftbarHr" />
 
         <ul className="leftbarFriendList">
-          <li className="leftbarFriendItem">
-            <img src="/assets/people/1.jpg" alt="" className="leftbarFriendImg" />
-            <span className="leftbarFriendName">John Doe</span>
-          </li>
-          <li className="leftbarFriendItem">
-            <img src="/assets/people/1.jpg" alt="" className="leftbarFriendImg" />
-            <span className="leftbarFriendName">John Doe</span>
-          </li>
-          <li className="leftbarFriendItem">
-            <img src="/assets/people/1.jpg" alt="" className="leftbarFriendImg" />
-            <span className="leftbarFriendName">John Doe</span>
-          </li>
+        {
+          Users.map(u => (
+            <CloseFriend  key={u.id} user={u} />
+          ))
+        }
         </ul>
       </div>
     </div>

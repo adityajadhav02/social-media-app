@@ -6,7 +6,7 @@ const Topbar = () => {
     <div className='topbarContainer'>
       <div className='topbarLeft'>
         <Link to='/' style={{textDecoration:"none"}}>
-          <span className="logo">facebook</span>
+          <span className="logo">socialsphere</span>
         </Link>
       </div>
       <div className='topbarMid'>

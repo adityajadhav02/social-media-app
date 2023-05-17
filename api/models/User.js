@@ -43,6 +43,10 @@ const userSchema = new mongoose.Schema({
         type: String, 
         max: 50
     },
+    city:{
+        type: String, 
+        max: 50
+    },
     from: {
         type: String, 
         max: 50

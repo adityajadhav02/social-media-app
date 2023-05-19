@@ -23,8 +23,8 @@ router.post("/register", async (req, res)=>{
         res.status(500).json(err);
     }
 
-    await user.save();
-    res.send("Okay");
+    // await user.save();
+    // res.send("Okay");
 })
 
 // User login

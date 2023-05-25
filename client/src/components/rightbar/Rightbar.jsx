@@ -1,8 +1,29 @@
 import './rightbar.css';
 import { Users } from '../../dummyData';
 import Online from '../online/Online';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Rightbar = ({user}) => {
+  console.log(user);
+
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [friends, setFriends] = useState([]);
+
+  useEffect(() => {
+    const getFriends = async () =>{
+      try{
+        const friendList = await axios.get("/users/friends/"+user._id);
+        setFriends(friendList.data);
+      }catch(e)
+      {
+        console.log(e)
+      }
+    }
+    getFriends();
+  }, [user._id])
+
   const HomeRightbar = () => {
     return <>
       <div className="birthdayContainer">
@@ -22,6 +43,8 @@ const Rightbar = ({user}) => {
   }
 
   const ProfileRightbar = () => {
+
+    
 
     return (
       <>
@@ -43,18 +66,14 @@ const Rightbar = ({user}) => {
         </div>
         <h4 className="righbarTitle">User Friends</h4>
         <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
-            <img src="/assets/people/3.jpg" alt="" className="rightbarFollowingImg" />
-            <span className="righbarFollowingName">Kenny James</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img src="/assets/people/3.jpg" alt="" className="rightbarFollowingImg" />
-            <span className="righbarFollowingName">Kenny James</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img src="/assets/people/3.jpg" alt="" className="rightbarFollowingImg" />
-            <span className="righbarFollowingName">Kenny James</span>
-          </div>
+          {friends.map(friend =>(
+            <Link to={"/profile/"+friend.username} style={{textDecoration:"none", color:"black"}}>
+            <div className="rightbarFollowing">
+              <img src={friend.profilePicture ? PF+friend.profilePicture : PF+'/noProfile.png'} alt="" className="rightbarFollowingImg" />
+              <span className="righbarFollowingName">{friend.username}</span>
+            </div>
+            </Link>
+          ))}
         </div>
       </>
     )

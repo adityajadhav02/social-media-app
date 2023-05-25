@@ -45,6 +45,7 @@ const handleLike = () =>{
                 <div className="postTopUser">
                     <Link to={`profile/${user.username}`}>
                         <img 
+                            crossOrigin='anonymous'
                             className="postPFP" 
                             alt = "pfp"
                             src={user.profilePicture ? PF+user.profilePicture :  PF+"noProfile.png"} 
@@ -59,7 +60,15 @@ const handleLike = () =>{
             </div>
             <div className="postMid">
                 <span className="postText">{post?.desc}</span>
-                <img className="postImg" src={PF+post.img} alt="img"/>
+                {(post.img) ?
+                    <img 
+                    className="postImg" 
+                    src={PF+post.img} 
+                    alt="img"
+                    crossOrigin='anonymous'
+                    /> : null
+                }
+                
             </div>
             <div className="postBottom">
                 <div className="postBottomLeft">

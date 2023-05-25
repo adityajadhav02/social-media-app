@@ -23,6 +23,21 @@ const CreatePost = () => {
             userId: user._id,
             desc: desc.current.value    
         }
+        if(file){
+            const data = new FormData();
+            const fileName = file.name;
+            data.append("file", file);
+            data.append("name", fileName);
+            newPost.img = fileName;
+            console.log(data);
+            try{
+                console.log(data);
+                await axios.post("/upload", data);
+                // window.location.reload();
+            }catch(err){
+                console.log(err)
+            }
+        }
 
         try{
            await axios.post("/posts", newPost)

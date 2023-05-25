@@ -6,7 +6,7 @@ const Online = ({user}) => {
     <div className='onlineContainer'>
         <li className="rightbarFriend">
           <div className="rightbarPFPContainer">
-            <img src={PF+user.profilePicture} alt="friend" className="rightbarPFP" />
+            <img src={PF+user.profilePicture} crossOrigin='anonymous' alt="friend" className="rightbarPFP" />
             <span className="rightbarOnline"></span>
           </div>
           <span className="rightbarUser">{user.username}</span>

@@ -42,7 +42,7 @@ const Topbar = () => {
           </div>
         </div>
         <Link to={`/profile/${user.username}`}> 
-          <img src={user.profilePic ? PF+user.profilePic: PF+"noProfile.png"} alt="" className="topbarPFP" /> 
+          <img src={user.profilePic ? PF+user.profilePic: PF+"noProfile.png"} alt="" className="topbarPFP" crossOrigin='anonymous'/> 
         </Link>
       </div>
     </div>

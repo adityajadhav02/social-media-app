@@ -3,6 +3,7 @@ import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import LabelIcon from '@mui/icons-material/Label';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import CancelIcon from '@mui/icons-material/Cancel';
 import { useContext, useRef } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { useState } from 'react';
@@ -33,7 +34,7 @@ const CreatePost = () => {
             try{
                 console.log(data);
                 await axios.post("/upload", data);
-                // window.location.reload();
+                window.location.reload();
             }catch(err){
                 console.log(err)
             }
@@ -50,10 +51,16 @@ const CreatePost = () => {
     <div className='createPost'>
         <div className="createPostWrapper">
             <div className="createTop">
-                <img src={user.profilePic ? PF+ user.profilePic : PF+"noProfile.png"} alt="" className="createProfileImg" />
+                <img src={user.profilePic ? PF+ user.profilePic : PF+"noProfile.png"} alt="" className="createProfileImg" crossOrigin='anonymous'/>
                 <input type="text" placeholder={"What's in your mind "+user.username+"?"} className="createInput" ref={desc}/>
             </div>
             <hr className="createHr" />
+            {file && (
+                <div className="createImgContainer">
+                    <img src={URL.createObjectURL(file)} alt="" className="createImg" />
+                    <CancelIcon className="createCancelImg" onClick={() => setFile(null)} />
+                </div>
+            )}
             <form className="createBottom" onSubmit={submitHandler}>
                 <div className="createOptions">
                     <label htmlFor="file" className="createOption">

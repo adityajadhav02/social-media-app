@@ -3,7 +3,7 @@ import { createContext } from "react";
 import AuthReducer from "./AuthReducer";
 
 const INTIAL_STATE = {
-    user: {"_id":"642c3090b39dce64c82a43de","username":"Adi","email":"adi@mail.com","password":"$2b$10$HqAL6Z6A30evgotxWg390OIXu71HMnQZ/zIT13.8zlKD5MwDLDnNO","profilePic":"/people/4.jpg","coverPic":"","followers":[],"following":[],"isAdmin":false,"createdAt":{"$date":{"$numberLong":"1680611852575"}},"updatedAt":{"$date":{"$numberLong":"1680611852575"}},"__v":{"$numberInt":"0"}},
+    user: {"_id":"642c30a950f13fcddf0ee1fd","username":"Tim","email":"tim@mail.com","password":"$2b$10$R8ZbKV6TpAKi8Gg1cBcx9uQm0rA3UiJj4zsEDpQuGoZITyvgcNdKW","followers":["642c3090b39dce64c82a43de"],"following":["642c3090b39dce64c82a43de"],"isAdmin":false,"createdAt":{"$date":{"$numberLong":"1680611852575"}},"updatedAt":{"$date":{"$numberLong":"1680611852575"}},"__v":{"$numberInt":"0"}},
     isFetching: false,
     error: false
 };

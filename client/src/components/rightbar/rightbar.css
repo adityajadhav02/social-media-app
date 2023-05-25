@@ -71,3 +71,23 @@
     object-fit: cover;
     margin-right: 10px;
 }
+
+.rightbarFollowBtn{
+    margin: 20px 0 10px 0;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--facebook-blue);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.rightbarFollowIcon{
+    margin-left: 10px;
+}
